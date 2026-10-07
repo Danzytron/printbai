@@ -1,12 +1,12 @@
 """
 =============================================================================
-PrintBai - Main PyScript Logic & Event-Driven Handlers
+PRINTBAI — Main PyScript Logic & Event-Driven Handlers
 School Project: Business + Event-Driven Programming
-Target: Runs directly in the browser via PyScript / Pyodide
+Target: Runs directly in browser via PyScript / Pyodide
 
 Key Demonstrations:
 1. Event-Driven Architecture (Click, Input, Change, Submit events)
-2. State Synchronization between Service Cards, Calculator, and Order Form
+2. State Synchronization across Services, Calculator, and Order Form
 3. Live reactive price calculation as user types/selects
 4. Robust form validation in pure Python with inline error updates
 =============================================================================
@@ -20,7 +20,6 @@ from pyscript import document, window, when
 # ---------------------------------------------------------------------------
 RATE_BW = 2.00        # ₱2.00 per page for Black & White
 RATE_COLOR = 5.00     # ₱5.00 per page for Colored
-DOUBLE_SIDED_DISCOUNT = 0.00  # 1 sheet = 2 pages, pricing per printed page
 
 
 # ---------------------------------------------------------------------------
@@ -50,10 +49,8 @@ def set_html(selector, html_content):
 # ---------------------------------------------------------------------------
 def compute_calculator_state():
     """
-    Extracts current inputs from the calculator DOM elements and computes
+    Extracts inputs from calculator DOM elements and computes
     rates, item breakdown, and total.
-    Returns:
-        dict containing (valid, pages, copies, p_type, paper_size, double_sided, rate, total, error_msg)
     """
     try:
         pages_input = get_el("#calc-pages")
@@ -150,12 +147,12 @@ def on_calc_input(event=None):
     if preview_el:
         if calc["valid"]:
             preview_el.textContent = f"₱{calc['total']:,.2f}"
-            preview_el.style.color = "var(--color-primary-dark)"
+            preview_el.style.color = "var(--neon-green)"
         else:
             preview_el.textContent = "₱0.00"
-            preview_el.style.color = "var(--color-text-muted)"
+            preview_el.style.color = "var(--text-muted)"
 
-    # Keep radio card visual highlight in sync
+    # Keep segmented control visual highlight in sync
     bw_card = get_el("#card-type-bw")
     color_card = get_el("#card-type-color")
     if calc["p_type"] == "Colored":
@@ -172,7 +169,7 @@ def on_calc_input(event=None):
 @when("click", "#btn-calculate")
 def on_calculate_click(event=None):
     """
-    Event-driven handler for the primary 'Calculate Total' button.
+    Event-driven handler for the primary 'Calculate' button.
     Renders an itemized breakdown receipt directly into the DOM.
     """
     if event:
@@ -186,49 +183,49 @@ def on_calculate_click(event=None):
 
     if not calc["valid"]:
         set_html("#calc-breakdown-details", f"""
-            <div style="color: var(--color-danger); padding: 1rem; background: #fef2f2; border-radius: 8px; font-size: 0.9rem;">
-                ⚠️ <strong>Calculation Notice:</strong> {calc['error_msg']}
+            <div style="color: var(--danger-red); font-family: var(--font-mono); font-size: 0.8rem; padding: 0.75rem; background: #1a0808; border: 1px solid var(--danger-red); border-radius: 4px;">
+                ⚠️ [VALIDATION_ERROR]: {calc['error_msg']}
             </div>
         """)
         return
 
-    # Build formatted itemized breakdown
-    double_sided_badge = "Yes (Duplex)" if calc["double_sided"] else "No (Single-sided)"
+    # Build formatted itemized breakdown in dark monospace theme
+    double_sided_badge = "Duplex [ON]" if calc["double_sided"] else "Single [OFF]"
     breakdown_html = f"""
-        <div class="breakdown-list">
-            <div class="breakdown-item">
-                <span class="label">Printing Type:</span>
-                <span class="val">{calc['p_type']}</span>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; font-family:var(--font-mono); font-size:0.775rem;">
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>PRINT_TYPE:</span>
+                <span style="color:var(--text-primary);">{calc['p_type'].upper()}</span>
             </div>
-            <div class="breakdown-item">
-                <span class="label">Number of Pages:</span>
-                <span class="val">{calc['pages']} page(s)</span>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>TOTAL_PAGES:</span>
+                <span style="color:var(--text-primary);">{calc['pages']} PG</span>
             </div>
-            <div class="breakdown-item">
-                <span class="label">Number of Copies:</span>
-                <span class="val">{calc['copies']} copy/copies</span>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>SETS_COPIES:</span>
+                <span style="color:var(--text-primary);">{calc['copies']} SET(S)</span>
             </div>
-            <div class="breakdown-item">
-                <span class="label">Paper Size:</span>
-                <span class="val">{calc['paper_size']}</span>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>PAPER_SIZE:</span>
+                <span style="color:var(--text-primary);">{calc['paper_size']}</span>
             </div>
-            <div class="breakdown-item">
-                <span class="label">Double-Sided:</span>
-                <span class="val">{double_sided_badge}</span>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>DUPLEX_MODE:</span>
+                <span style="color:var(--neon-green);">{double_sided_badge}</span>
             </div>
-            <div class="breakdown-item">
-                <span class="label">Applicable Rate:</span>
-                <span class="val">₱{calc['rate']:.2f} / page</span>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>BASE_RATE:</span>
+                <span style="color:var(--text-primary);">₱{calc['rate']:.2f} / PG</span>
             </div>
-            <div class="breakdown-total-row">
-                <span class="total-label">Estimated Total:</span>
-                <span class="total-value">₱{calc['total']:,.2f}</span>
+            <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:baseline;">
+                <span style="font-weight:700; color:var(--text-primary);">TOTAL_ESTIMATE:</span>
+                <span style="font-size:1.4rem; font-weight:800; color:var(--neon-green);">₱{calc['total']:,.2f}</span>
             </div>
         </div>
     """
     set_html("#calc-breakdown-details", breakdown_html)
 
-    # Also automatically sync this calculation with the Order Form below
+    # Automatically sync this calculation with the Order Form below
     sync_to_order_form(calc)
 
 
@@ -371,7 +368,7 @@ def on_order_submit(event):
 
     # 1. Name Validation
     if not name:
-        set_field_error("#order-name", "#error-order-name", "Please enter your full name.")
+        set_field_error("#order-name", "#error-order-name", "Please enter your name.")
         has_error = True
     elif len(name) < 2:
         set_field_error("#order-name", "#error-order-name", "Name must be at least 2 characters.")
@@ -379,7 +376,7 @@ def on_order_submit(event):
 
     # 2. Phone Validation
     if not phone:
-        set_field_error("#order-phone", "#error-order-phone", "Please provide a contact number.")
+        set_field_error("#order-phone", "#error-order-phone", "Please enter a valid phone number.")
         has_error = True
     elif not PHONE_REGEX.match(phone):
         set_field_error("#order-phone", "#error-order-phone", "Please enter a valid phone number (e.g. 09171234567).")
@@ -397,7 +394,7 @@ def on_order_submit(event):
     try:
         pages = int(pages_raw)
         if pages <= 0:
-            set_field_error("#order-pages", "#error-order-pages", "Please enter a valid number of pages (1 or more).")
+            set_field_error("#order-pages", "#error-order-pages", "Please enter a valid number of pages.")
             has_error = True
     except ValueError:
         set_field_error("#order-pages", "#error-order-pages", "Please enter a valid number of pages.")
@@ -424,42 +421,40 @@ def on_order_submit(event):
 
     # Calculate Order Total
     rate = RATE_COLOR if service_type == "color" else RATE_BW
-    service_label = "Colored Printing (₱5.00/page)" if service_type == "color" else "Black & White Printing (₱2.00/page)"
+    service_label = "COLORED PRINTING (₱5.00/PG)" if service_type == "color" else "BLACK & WHITE PRINTING (₱2.00/PG)"
     estimated_total = pages * copies * rate
-    fulfillment_label = "Campus Kiosk Pickup" if fulfillment == "pickup" else "Student Dorm / Group Delivery"
+    fulfillment_label = "Campus Kiosk Pickup" if fulfillment == "pickup" else "Student Dorm / Group Hand-off"
 
-    # Display Order Summary dynamically
+    # Display Order Summary in Dark Developer Terminal Style
     summary_html = f"""
-        <div class="order-receipt-details">
-            <div class="breakdown-list">
-                <div class="breakdown-item">
-                    <span class="label">Customer Name:</span>
-                    <span class="val"><strong>{name}</strong></span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Contact Info:</span>
-                    <span class="val">{phone} &bull; {email}</span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Service Selected:</span>
-                    <span class="val">{service_label}</span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Paper Size & Options:</span>
-                    <span class="val">{paper_size} &bull; {fulfillment_label}</span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Pages & Copies:</span>
-                    <span class="val">{pages} pages &times; {copies} copy/copies</span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Special Instructions:</span>
-                    <span class="val"><em>{instructions}</em></span>
-                </div>
-                <div class="breakdown-total-row">
-                    <span class="total-label">Estimated Total to Pay:</span>
-                    <span class="total-value">₱{estimated_total:,.2f}</span>
-                </div>
+        <div style="font-family:var(--font-mono); font-size:0.8rem; display:flex; flex-direction:column; gap:0.65rem;">
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>CUSTOMER:</span>
+                <span style="color:var(--text-primary); font-weight:700;">{name}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>CONTACT:</span>
+                <span style="color:var(--text-primary);">{phone} &bull; {email}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>SERVICE:</span>
+                <span style="color:var(--neon-green);">{service_label}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>PAPER &amp; METHOD:</span>
+                <span style="color:var(--text-primary);">{paper_size} &bull; {fulfillment_label}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>QUANTITY:</span>
+                <span style="color:var(--text-primary);">{pages} pages &times; {copies} set(s)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+                <span>INSTRUCTIONS:</span>
+                <span style="color:var(--text-muted);">"{instructions}"</span>
+            </div>
+            <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border-light); display:flex; justify-content:space-between; align-items:baseline;">
+                <span style="font-weight:700; color:var(--text-primary);">ESTIMATED TOTAL:</span>
+                <span style="font-size:1.6rem; font-weight:800; color:var(--neon-green);">₱{estimated_total:,.2f}</span>
             </div>
         </div>
     """
@@ -481,8 +476,11 @@ def on_init():
     # Update PyScript header badge
     dot = get_el("#py-status-dot")
     badge_text = get_el("#py-status-text")
-    if dot: dot.classList.add("ready")
-    if badge_text: badge_text.textContent = "Python 3 Runtime Active & Event Handlers Bound"
+    if dot: 
+        dot.style.backgroundColor = "var(--neon-green)"
+        dot.style.boxShadow = "0 0 10px var(--neon-green)"
+    if badge_text: 
+        badge_text.textContent = "PYTHON 3.14 RUNTIME ACTIVE // EVENT HANDLERS READY"
 
     # Initial live price calculation
     on_calc_input(None)
