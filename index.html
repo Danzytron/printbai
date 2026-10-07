@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINTBAI — Fast, Affordable Printing Built for Students</title>
+  <title>PrintBai — Fast, Affordable, Student-Friendly Printing</title>
   
-  <!-- Modern Geometric Sans & Monospace Fonts (Space Grotesk, Inter, JetBrains Mono) -->
+  <!-- Google Fonts: Inter & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Redesigned Dark Futuristic Stylesheet -->
+  <!-- PrintBai Stylesheet -->
   <link rel="stylesheet" href="./style.css">
 
   <!-- PyScript Core (2024 Stable Release) -->
@@ -19,42 +19,32 @@
 </head>
 <body>
 
-  <!-- Technical Grid Background & Ambient Lighting -->
-  <div class="technical-grid-bg" aria-hidden="true"></div>
-  <div class="ambient-glow" aria-hidden="true"></div>
-
-  <!-- Intersection Cross Markers (+) across viewport -->
-  <span class="grid-cross" style="top: 80px; left: 80px;" aria-hidden="true">+</span>
-  <span class="grid-cross" style="top: 80px; right: 80px;" aria-hidden="true">+</span>
-  <span class="grid-cross" style="top: 320px; left: 160px;" aria-hidden="true">+</span>
-  <span class="grid-cross" style="top: 480px; right: 160px;" aria-hidden="true">+</span>
-
-  <!-- PyScript Developer Engine Status Bar -->
-  <div class="py-engine-bar">
-    <div class="py-engine-status">
-      <span id="py-status-dot" class="py-dot"></span>
-      <span id="py-status-text">PYTHON 3 RUNTIME INITIALIZING...</span>
+  <!-- PyScript Engine Live Status Indicator -->
+  <div class="pyscript-indicator">
+    <div class="py-badge">
+      <span id="py-status-dot" class="py-status-dot"></span>
+      <span id="py-status-text">Initializing PyScript Engine...</span>
     </div>
-    <div class="text-mono">SYS_EVENT_DRIVEN_ARCHITECTURE // PYSCRIPT CORE 2024</div>
+    <span style="font-size: 0.75rem; opacity: 0.85;">Event-Driven Architecture powered by Python &amp; PyScript</span>
   </div>
 
-  <!-- Navigation Bar (Watermelon UI Inspired) -->
+  <!-- 1. Sticky Navigation Bar -->
   <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="#home" class="brand-wrapper">
-        <div class="brand-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <div class="container navbar-container">
+      <a href="#home" class="brand-logo" aria-label="PrintBai Homepage">
+        <div class="brand-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 6 2 18 2 18 9"></polyline>
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
             <rect x="6" y="14" width="12" height="8"></rect>
           </svg>
         </div>
-        <span class="brand-name">PRINTBAI</span>
-        <span class="brand-tag">v2.0</span>
+        Print<span>Bai</span>
       </a>
 
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#pricing" class="nav-link">Pricing</a></li>
           <li><a href="#calculator" class="nav-link">Calculator</a></li>
@@ -64,665 +54,734 @@
         </ul>
       </nav>
 
-      <div class="nav-right">
-        <a href="https://github.com" target="_blank" rel="noopener" class="nav-icon-btn" title="GitHub Project Source">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
-        <a href="#calculator" class="btn btn-neon btn-sm">GET STARTED &rarr;</a>
+      <div class="nav-actions">
+        <a href="#calculator" class="btn btn-accent btn-sm">Print Now</a>
       </div>
     </div>
   </header>
 
-  <!-- Content Wrapper -->
-  <main class="content-wrapper">
-
-    <!-- HERO SECTION (Centered, Huge Typography & Tilted Floating Cards) -->
-    <section id="home" class="hero">
-      <div class="container">
-        
-        <div class="hero-center">
-          <div class="hero-badge">
-            <span class="dot"></span>
-            PRINTING MADE SIMPLE &mdash; FOR STUDENTS
-          </div>
-
-          <h1 class="hero-headline">
-            Print Smarter.<br>
-            Print <span class="text-neon">Faster.</span>
-          </h1>
-
-          <p class="hero-description">
-            Affordable, fast, and student-friendly printing for research papers, projects, reports, and everyday school documents.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#calculator" class="btn btn-neon btn-lg">
-              CALCULATE PRICE ↗
-            </a>
-            <a href="#services" class="btn btn-dark btn-lg">
-              VIEW SERVICES
-            </a>
-          </div>
-
-          <!-- Micro Technical Statistics Strip -->
-          <div class="hero-micro-strip">
-            <div class="hero-micro-item">
-              <span class="text-neon">01</span>
-              <span><strong>₱2.00</strong> / PAGE B&amp;W</span>
-            </div>
-            <div class="hero-micro-item">
-              <span class="text-neon">02</span>
-              <span><strong>₱5.00</strong> / PAGE COLOR</span>
-            </div>
-            <div class="hero-micro-item">
-              <span class="text-neon">03</span>
-              <span><strong>INSTANT</strong> CAMPUS PICKUP</span>
-            </div>
-          </div>
+  <!-- 2. Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Print It. Get It. Done.
         </div>
 
-        <!-- Floating Cards Composition (Matching Reference Image Composition) -->
-        <div class="floating-showcase" aria-hidden="true">
-          
-          <!-- Top Left Floating Card -->
-          <div class="float-card card-pos-tl">
-            <div class="float-card-header">
-              <span>PRINTBAI // SPEC</span>
-              <span class="indicator"></span>
-            </div>
-            <div class="card-spec-title">Black &amp; White</div>
-            <div class="card-spec-row">
-              <span>Standard Draft</span>
-              <span class="text-neon">₱2.00/pg</span>
-            </div>
-            <div class="card-spec-row">
-              <span>75 GSM Bond</span>
-              <span>A4 / Letter</span>
-            </div>
-          </div>
+        <h1 class="hero-title">
+          Fast. Affordable. <span>Student-Friendly</span> Printing.
+        </h1>
 
-          <!-- Bottom Left Floating Card -->
-          <div class="float-card card-pos-bl">
-            <div class="float-card-header">
-              <span>ESTIMATE PREVIEW</span>
-              <span>LIVE</span>
-            </div>
-            <div class="card-spec-title">Research Paper</div>
-            <div class="card-spec-row">
-              <span>Pages &times; Copies</span>
-              <span>24 &times; 2</span>
-            </div>
-            <div class="card-spec-price">
-              <span>Total:</span>
-              <span>₱96.00</span>
-            </div>
-          </div>
+        <p class="hero-description">
+          From research papers to school projects, PrintBai makes printing simple, affordable, and convenient for college and senior high school students.
+        </p>
 
-          <!-- Center Dominant Card -->
-          <div class="float-card card-pos-center">
-            <div class="float-card-header">
-              <span>PRINTBAI // SYSTEM STATUS</span>
-              <span class="indicator"></span>
-            </div>
-            <div class="card-spec-title" style="font-size:1.15rem; margin-bottom: 0.75rem;">
-              Campus Fast-Queue Station
-            </div>
-            <div class="card-spec-row">
-              <span>Printer Cluster</span>
-              <span class="text-neon">ONLINE [04 ACTIVE]</span>
-            </div>
-            <div class="card-spec-row">
-              <span>Queue Status</span>
-              <span>&lt; 5 MIN TURNAROUND</span>
-            </div>
-            <div class="card-spec-row">
-              <span>Runtime Engine</span>
-              <span>PYSCRIPT + PYODIDE</span>
-            </div>
-            <div class="card-spec-price" style="font-size: 1.15rem; border-top: 1px dashed var(--border-light); padding-top: 0.65rem; margin-top: 0.75rem;">
-              <span>Student Rate:</span>
-              <span class="text-neon">FROM ₱2.00 / PG</span>
-            </div>
-          </div>
-
-          <!-- Bottom Right Floating Card -->
-          <div class="float-card card-pos-br">
-            <div class="float-card-header">
-              <span>ORDER STATUS</span>
-              <span class="indicator"></span>
-            </div>
-            <div class="card-spec-title">Document Ready</div>
-            <div class="card-spec-row">
-              <span>Capstone Project</span>
-              <span>42 Pages</span>
-            </div>
-            <div class="card-spec-row">
-              <span>Status</span>
-              <span class="text-neon">&#9679; READY FOR PICKUP</span>
-            </div>
-          </div>
-
-          <!-- Top Right Floating Card -->
-          <div class="float-card card-pos-tr">
-            <div class="float-card-header">
-              <span>PRINTBAI // COLOR</span>
-              <span class="indicator"></span>
-            </div>
-            <div class="card-spec-title">Color Prints</div>
-            <div class="card-spec-row">
-              <span>Visual Aids</span>
-              <span class="text-neon">₱5.00/pg</span>
-            </div>
-            <div class="card-spec-row">
-              <span>High DPI</span>
-              <span>80 GSM Pure</span>
-            </div>
-          </div>
-
+        <div class="hero-cta-group">
+          <a href="#calculator" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="16" y1="14" x2="16" y2="18"></line>
+              <path d="M16 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M8 14h.01"></path>
+              <path d="M12 18h.01"></path>
+              <path d="M8 18h.01"></path>
+            </svg>
+            Calculate My Printing
+          </a>
+          <a href="#order" class="btn btn-outline btn-lg">
+            Place an Order
+          </a>
         </div>
 
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span class="trust-text">Affordable Rates</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span class="trust-text">Student Friendly</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span class="trust-text">Fast Service</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span class="trust-text">Quality Prints</span>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <!-- 01 / SERVICES SECTION -->
-    <section id="services" class="section">
-      <div class="container">
-        
-        <div class="section-header">
-          <div class="section-label">01 / SERVICES</div>
-          <h2 class="section-title">
-            Everything you need<br>
-            to <span class="text-neon">print.</span>
-          </h2>
-          <p class="section-desc">Tailored print configurations for academic workflows. Selecting a service immediately syncs parameters into our Python engine.</p>
-        </div>
-
-        <div class="services-grid">
-          <!-- Card 01 -->
-          <div class="service-box">
-            <span class="service-box-num">01 // B&amp;W</span>
-            <h3 class="service-box-title">Black &amp; White</h3>
-            <div class="service-box-price">₱2.00 <span>/ PAGE</span></div>
-            <ul class="service-box-list">
-              <li>Research papers</li>
-              <li>Daily assignments</li>
-              <li>Quiz reviewers</li>
-              <li>Official school forms</li>
-            </ul>
-            <button type="button" id="btn-choose-bw" class="btn btn-dark btn-block btn-sm">
-              EXPLORE &rarr;
-            </button>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              Standard Campus Rates
+            </div>
+            <span class="badge-student">Student Verified</span>
           </div>
 
-          <!-- Card 02 -->
-          <div class="service-box">
-            <span class="service-box-num">02 // COLOR</span>
-            <h3 class="service-box-title">Color Printing</h3>
-            <div class="service-box-price"><span class="text-neon">₱5.00</span> <span>/ PAGE</span></div>
-            <ul class="service-box-list">
-              <li>Project presentations</li>
-              <li>Infographics &amp; charts</li>
-              <li>Visual aids &amp; portfolios</li>
-              <li>Capstone exhibits</li>
-            </ul>
-            <button type="button" id="btn-choose-color" class="btn btn-dark btn-block btn-sm">
-              EXPLORE &rarr;
-            </button>
-          </div>
+          <div class="hero-card-body">
+            <div class="price-pill-row">
+              <div class="price-pill">
+                <div class="price-pill-label">Black &amp; White</div>
+                <div class="price-pill-value">₱2.00</div>
+                <div style="font-size:0.75rem; color:var(--color-text-muted);">per page</div>
+              </div>
 
-          <!-- Card 03 -->
-          <div class="service-box">
-            <span class="service-box-num">03 // RESEARCH</span>
-            <h3 class="service-box-title">Research Printing</h3>
-            <div class="service-box-price">₱2.00 <span>/ PAGE</span></div>
-            <ul class="service-box-list">
-              <li>Thesis drafts &amp; proposals</li>
-              <li>APA / MLA compliant margins</li>
-              <li>Clean collation</li>
-              <li>Complimentary staples</li>
-            </ul>
-            <button type="button" id="btn-choose-research" class="btn btn-dark btn-block btn-sm">
-              EXPLORE &rarr;
-            </button>
-          </div>
+              <div class="price-pill highlight">
+                <div class="price-pill-label">Colored</div>
+                <div class="price-pill-value">₱5.00</div>
+                <div style="font-size:0.75rem; color:var(--color-text-muted);">per page</div>
+              </div>
+            </div>
 
-          <!-- Card 04 -->
-          <div class="service-box">
-            <span class="service-box-num">04 // PROJECT</span>
-            <h3 class="service-box-title">School Projects</h3>
-            <div class="service-box-price"><span class="text-neon">₱5.00</span> <span>/ PAGE</span></div>
-            <ul class="service-box-list">
-              <li>Team submission kits</li>
-              <li>Handouts for class</li>
-              <li>Magazine layout prints</li>
-              <li>Heavy-stock covers</li>
-            </ul>
-            <button type="button" id="btn-choose-project" class="btn btn-dark btn-block btn-sm">
-              EXPLORE &rarr;
-            </button>
+            <div class="hero-card-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Instant pickup right beside campus building</span>
+            </div>
+            <div class="hero-card-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Clean 75-80 GSM high-grade paper for all prints</span>
+            </div>
           </div>
         </div>
 
+        <div class="hero-badge-floating">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          100% Student Tested &amp; Budget Approved
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 02 / PRICING SECTION -->
-    <section id="pricing" class="section">
-      <div class="container">
-        
-        <div class="section-header centered">
-          <div class="section-label">02 / PRICING</div>
-          <h2 class="section-title">
-            Simple pricing.<br>
-            <span class="text-neon">No surprises.</span>
-          </h2>
-          <p class="section-desc">Zero hidden charges. Sample semester pricing calibrated directly for student allowances.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <!-- B&W Giant Card -->
-          <div class="pricing-giant-card">
-            <div>
-              <div class="pricing-header-type">01 // MONOCHROME</div>
-              <h3 class="pricing-header-name">Black &amp; White</h3>
-              <div class="pricing-amount-huge">
-                <span class="currency">₱</span>2.00
-              </div>
-              <div class="pricing-unit-text">PER PRINTED PAGE</div>
-            </div>
-
-            <ul class="pricing-feature-list">
-              <li><span class="check">&#10003;</span> 75-80 GSM high-grade white bond paper</li>
-              <li><span class="check">&#10003;</span> Supported: Short (Letter), Long (Legal), A4</li>
-              <li><span class="check">&#10003;</span> Single-sided or Duplex printing</li>
-              <li><span class="check">&#10003;</span> Complimentary bundling &amp; corner staple</li>
-            </ul>
-
-            <button type="button" class="btn btn-dark btn-block" onclick="document.querySelector('#btn-choose-bw').click()">
-              CALCULATE B&amp;W &rarr;
-            </button>
-          </div>
-
-          <!-- Color Giant Card -->
-          <div class="pricing-giant-card highlight">
-            <div>
-              <div class="pricing-header-type text-neon">02 // FULL SPECTRUM</div>
-              <h3 class="pricing-header-name">Color Printing</h3>
-              <div class="pricing-amount-huge text-neon">
-                <span class="currency">₱</span>5.00
-              </div>
-              <div class="pricing-unit-text">PER PRINTED PAGE</div>
-            </div>
-
-            <ul class="pricing-feature-list">
-              <li><span class="check">&#10003;</span> High-DPI vibrant pigment ink output</li>
-              <li><span class="check">&#10003;</span> Supported: Short (Letter), Long (Legal), A4</li>
-              <li><span class="check">&#10003;</span> Crisp charts, diagrams, and photos</li>
-              <li><span class="check">&#10003;</span> Complimentary bundling &amp; corner staple</li>
-            </ul>
-
-            <button type="button" class="btn btn-neon btn-block" onclick="document.querySelector('#btn-choose-color').click()">
-              CALCULATE COLOR &rarr;
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 03 / INTERACTIVE CALCULATOR (FUTURISTIC TERMINAL) -->
-    <section id="calculator" class="section">
-      <div class="container">
-        
-        <div class="section-header">
-          <div class="section-label">03 / CALCULATOR</div>
-          <h2 class="section-title">
-            Know your cost<br>
-            <span class="text-neon">before you print.</span>
-          </h2>
-          <p class="section-desc">Reactive PyScript calculation engine. Adjust the parameters below &mdash; Python event handlers calculate prices and itemized breakdowns instantly.</p>
-        </div>
-
-        <div class="calc-terminal-wrapper">
-          <!-- Terminal Top Bar -->
-          <div class="calc-terminal-topbar">
-            <div class="terminal-dots">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-            </div>
-            <span class="text-mono">PRINTBAI_ESTIMATOR_V2.PY // EVENT_DRIVEN</span>
-            <span class="text-neon text-mono">&#9679; LIVE_SYNC</span>
-          </div>
-
-          <div class="calc-terminal-body">
-            <!-- Left Controls Panel -->
-            <div class="calc-left-controls">
-              
-              <!-- Printing Type -->
-              <div class="control-group">
-                <label class="control-label">PRINTING TYPE</label>
-                <div class="segmented-control">
-                  <label id="card-type-bw" class="segmented-option active">
-                    <input type="radio" name="calc-print-type" id="calc-type-bw" value="bw" checked>
-                    BLACK &amp; WHITE (₱2)
-                  </label>
-                  <label id="card-type-color" class="segmented-option">
-                    <input type="radio" name="calc-print-type" id="calc-type-color" value="color">
-                    COLORED (₱5)
-                  </label>
-                </div>
-              </div>
-
-              <!-- Pages & Copies Inputs Row -->
-              <div class="inputs-row control-group">
-                <div>
-                  <label for="calc-pages" class="control-label">PAGES</label>
-                  <input type="number" id="calc-pages" class="dark-input" value="10" min="1" max="1000">
-                </div>
-                <div>
-                  <label for="calc-copies" class="control-label">COPIES</label>
-                  <input type="number" id="calc-copies" class="dark-input" value="2" min="1" max="100">
-                </div>
-              </div>
-
-              <!-- Paper Size Selection -->
-              <div class="control-group">
-                <label for="calc-paper-size" class="control-label">PAPER SIZE</label>
-                <select id="calc-paper-size" class="dark-select">
-                  <option value="A4" selected>A4 (8.27 &times; 11.69 in)</option>
-                  <option value="Short (Letter)">Short / Letter (8.5 &times; 11.0 in)</option>
-                  <option value="Long (Legal)">Long / Legal (8.5 &times; 13.0 in)</option>
-                </select>
-              </div>
-
-              <!-- Double Sided Toggle -->
-              <div class="control-group">
-                <label class="control-label">DUPLEX OPTION</label>
-                <div class="dark-checkbox-wrap">
-                  <input type="checkbox" id="calc-double-sided">
-                  <label for="calc-double-sided">DOUBLE-SIDED PRINTING (DUPLEX)</label>
-                </div>
-              </div>
-
-              <!-- Action Button -->
-              <div style="margin-top: 2rem;">
-                <button type="button" id="btn-calculate" class="btn btn-neon btn-block btn-lg">
-                  CALCULATE &rarr;
-                </button>
-              </div>
-
-            </div>
-
-            <!-- Right Output Terminal -->
-            <div class="calc-right-output">
-              <div>
-                <div class="terminal-result-card">
-                  <div class="terminal-meta-tag">ESTIMATED TOTAL // REAL-TIME</div>
-                  <div id="live-preview-price" class="live-huge-price">₱40.00</div>
-                  <div style="font-family: var(--font-mono); font-size: 0.725rem; color: var(--text-muted);">
-                    REACTIVELY TRIGGERED ON @when('input') &amp; @when('change')
-                  </div>
-                </div>
-
-                <!-- Itemized Breakdown -->
-                <div class="terminal-breakdown">
-                  <div class="terminal-meta-tag" style="margin-bottom: 0.85rem;">ITEMIZED BREAKDOWN</div>
-                  <div id="calc-breakdown-details">
-                    <!-- Populated dynamically by PyScript on_calculate_click -->
-                  </div>
-                </div>
-              </div>
-
-              <div style="margin-top: 2rem;">
-                <a href="#order" class="btn btn-dark btn-block">
-                  PROCEED TO ORDER &rarr;
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 04 / ORDER SECTION (FUTURISTIC TECHNICAL FORM) -->
-    <section id="order" class="section">
-      <div class="container">
-        
-        <div class="section-header centered">
-          <div class="section-label">04 / ORDER</div>
-          <h2 class="section-title">
-            Ready to<br>
-            <span class="text-neon">print?</span>
-          </h2>
-          <p class="section-desc">Submit your print specifications. Evaluated entirely in Python via PyScript with robust client-side validation.</p>
-        </div>
-
-        <div class="order-shell">
-          <form id="order-form" novalidate>
-            <div class="order-grid-fields">
-              
-              <!-- Full Name -->
-              <div>
-                <label for="order-name" class="control-label">FULL NAME *</label>
-                <input type="text" id="order-name" class="dark-input" placeholder="e.g. Juan Dela Cruz">
-                <div id="error-order-name" class="field-error-msg">Please enter your name.</div>
-              </div>
-
-              <!-- Contact Number -->
-              <div>
-                <label for="order-phone" class="control-label">CONTACT NUMBER *</label>
-                <input type="tel" id="order-phone" class="dark-input" placeholder="e.g. 0917 123 4567">
-                <div id="error-order-phone" class="field-error-msg">Please enter a valid phone number.</div>
-              </div>
-
-              <!-- Email -->
-              <div class="form-field-full">
-                <label for="order-email" class="control-label">EMAIL ADDRESS *</label>
-                <input type="email" id="order-email" class="dark-input" placeholder="e.g. juan@student.edu.ph">
-                <div id="error-order-email" class="field-error-msg">Please enter a valid email address.</div>
-              </div>
-
-              <!-- Printing Type -->
-              <div>
-                <label for="order-type" class="control-label">PRINTING TYPE *</label>
-                <select id="order-type" class="dark-select">
-                  <option value="bw">Black &amp; White (₱2.00 / page)</option>
-                  <option value="color">Colored (₱5.00 / page)</option>
-                </select>
-              </div>
-
-              <!-- Paper Size -->
-              <div>
-                <label for="order-paper-size" class="control-label">PAPER SIZE *</label>
-                <select id="order-paper-size" class="dark-select">
-                  <option value="A4" selected>A4 (Standard)</option>
-                  <option value="Short (Letter)">Short (8.5 &times; 11.0 in)</option>
-                  <option value="Long (Legal)">Long (8.5 &times; 13.0 in)</option>
-                </select>
-              </div>
-
-              <!-- Pages -->
-              <div>
-                <label for="order-pages" class="control-label">NUMBER OF PAGES *</label>
-                <input type="number" id="order-pages" class="dark-input" value="10" min="1">
-                <div id="error-order-pages" class="field-error-msg">Please enter a valid number of pages.</div>
-              </div>
-
-              <!-- Copies -->
-              <div>
-                <label for="order-copies" class="control-label">NUMBER OF COPIES *</label>
-                <input type="number" id="order-copies" class="dark-input" value="2" min="1">
-                <div id="error-order-copies" class="field-error-msg">Please enter at least 1 copy.</div>
-              </div>
-
-              <!-- Fulfillment -->
-              <div class="form-field-full">
-                <label for="order-fulfillment" class="control-label">PICKUP / DELIVERY METHOD</label>
-                <select id="order-fulfillment" class="dark-select">
-                  <option value="pickup" selected>Campus Station Pickup (Beside Main Library)</option>
-                  <option value="dorm">Student Dorm / Group Hand-off</option>
-                </select>
-              </div>
-
-              <!-- Additional Instructions -->
-              <div class="form-field-full">
-                <label for="order-instructions" class="control-label">ADDITIONAL INSTRUCTIONS</label>
-                <textarea id="order-instructions" class="dark-input" rows="3" placeholder="e.g. Staple upper-left corner. Collate into two sets."></textarea>
-              </div>
-
-            </div>
-
-            <button type="submit" id="btn-submit-order" class="btn btn-neon btn-block btn-lg">
-              SUBMIT ORDER &rarr;
-            </button>
-          </form>
-
-          <!-- Terminal Order Receipt Generated by PyScript -->
-          <div id="order-confirmation" class="terminal-receipt-box">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid var(--border-light); padding-bottom:0.75rem;">
-              <span class="text-neon text-mono" style="font-weight:700;">&#10003; ORDER RECEIVED // DEMONSTRATION PROTOTYPE</span>
-              <span class="text-mono" style="font-size:0.7rem; color:var(--text-muted);">SYS_RECORD_2026</span>
-            </div>
-
-            <div id="order-receipt-content">
-              <!-- Dynamically rendered by main.py on_order_submit -->
-            </div>
-
-            <div style="margin-top:1.25rem; font-family:var(--font-mono); font-size:0.725rem; color:var(--text-muted); border-top:1px dashed var(--border-subtle); padding-top:0.75rem;">
-              Note: <em>Order request recorded for demonstration. (Academic school project simulation)</em>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 05 / HOW IT WORKS (TIMELINE PROCESS) -->
-    <section id="process" class="section">
-      <div class="container">
-        
-        <div class="section-header">
-          <div class="section-label">05 / PROCESS</div>
-          <h2 class="section-title">
-            From file<br>
-            to <span class="text-neon">finished print.</span>
-          </h2>
-          <p class="section-desc">Four friction-free steps built to eliminate queuing between classes.</p>
-        </div>
-
-        <div class="process-timeline">
-          <!-- Step 01 -->
-          <div class="process-step-node">
-            <span class="process-index">01</span>
-            <h3 class="process-title">CHOOSE</h3>
-            <p class="process-desc">Select your color option, paper specifications, page count, and binding requirements.</p>
-          </div>
-
-          <!-- Step 02 -->
-          <div class="process-step-node">
-            <span class="process-index">02</span>
-            <h3 class="process-title">CALCULATE</h3>
-            <p class="process-desc">Receive an instant, transparent cost estimation via our browser-based Python engine.</p>
-          </div>
-
-          <!-- Step 03 -->
-          <div class="process-step-node">
-            <span class="process-index">03</span>
-            <h3 class="process-title">SUBMIT</h3>
-            <p class="process-desc">Send your order parameters for priority queue processing at the campus kiosk.</p>
-          </div>
-
-          <!-- Step 04 -->
-          <div class="process-step-node">
-            <span class="process-index">04</span>
-            <h3 class="process-title">PRINT</h3>
-            <p class="process-desc">Grab your crisp collated documents cleanly packaged and ready for classroom submission.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 06 / ABOUT PRINTBAI -->
-    <section id="about" class="section">
-      <div class="container">
-        
-        <div class="about-grid">
-          <div>
-            <div class="section-label">06 / ABOUT</div>
-            <h2 class="section-title">
-              Built for students.<br>
-              <span class="text-neon">Designed for speed.</span>
-            </h2>
-            <p class="section-desc">
-              PrintBai replaces traditional off-campus print shop friction with modern web engineering. Designed specifically for senior high school and collegiate students balancing tight submission deadlines and daily budgets.
-            </p>
-
-            <div class="about-metric-row">
-              <div class="about-metric-card">
-                <div class="about-metric-val">₱2.00</div>
-                <div class="about-metric-label">STARTING RATE PER PAGE</div>
-              </div>
-              <div class="about-metric-card">
-                <div class="about-metric-val">&lt; 5m</div>
-                <div class="about-metric-label">AVERAGE TURNAROUND TIME</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Futuristic Visual Component -->
-          <div class="about-visual-box">
-            <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-              PRINTBAI // ARCHITECTURE_OVERVIEW
-            </div>
-            <div style="border-left: 2px solid var(--neon-green); padding-left: 1rem; margin-bottom: 1.5rem;">
-              <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 600;">Event-Driven Runtime</div>
-              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Powered by Python 3 in WebAssembly via PyScript 2024. All calculations, reactivity, and validation execute client-side.
-              </div>
-            </div>
-
-            <div style="border-left: 2px solid var(--border-hover); padding-left: 1rem;">
-              <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 600;">Campus Kiosk Location</div>
-              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Ground Floor Student Center &bull; Mon-Fri 7:30AM - 6:30PM
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER (Huge Typography, Dark & Premium) -->
-  <footer class="footer-dark">
+  <!-- 3. Services Section -->
+  <section id="services" class="section section-alt">
     <div class="container">
-      
-      <!-- Huge Wordmark -->
-      <div class="footer-huge-wordmark">
-        PRINTBAI
+      <div class="section-header">
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">Essential Printing For Every Student Requirement</h2>
+        <p class="section-description">Choose from our tailored printing offerings. Clicking any service instantly triggers a PyScript event that syncs the calculator and order form.</p>
       </div>
 
-      <div class="footer-bottom-grid">
-        <div>
-          <div style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-            Print It. Get It. Done.
+      <div class="services-grid">
+        <!-- Service 1: Black & White -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 340px; line-height: 1.6;">
-            Fast, affordable printing system built for college and senior high school students in the Philippines.
+          <h3 class="service-card-title">Black &amp; White Printing</h3>
+          <p class="service-card-desc">Affordable printing for documents, daily assignments, quiz reviewers, and research papers.</p>
+          <div class="service-price-tag">
+            <span class="label">Starting at</span>
+            <span class="price">₱2.00 / page</span>
+          </div>
+          <button type="button" id="btn-choose-bw" class="btn btn-outline btn-block btn-sm">
+            Choose Service
+          </button>
+        </div>
+
+        <!-- Service 2: Colored Printing -->
+        <div class="service-card">
+          <div class="service-icon-wrapper" style="background:#fef3c7; color:#d97706;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Colored Printing</h3>
+          <p class="service-card-desc">High-quality color printing for presentations, capstone projects, charts, and important documents.</p>
+          <div class="service-price-tag">
+            <span class="label">Starting at</span>
+            <span class="price" style="color:#d97706;">₱5.00 / page</span>
+          </div>
+          <button type="button" id="btn-choose-color" class="btn btn-outline btn-block btn-sm">
+            Choose Service
+          </button>
+        </div>
+
+        <!-- Service 3: Research & Document Printing -->
+        <div class="service-card">
+          <div class="service-icon-wrapper" style="background:#ecfdf5; color:#059669;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Research &amp; Documents</h3>
+          <p class="service-card-desc">Perfect for term papers, thesis drafts, official school registration forms, and clearances.</p>
+          <div class="service-price-tag">
+            <span class="label">Standard</span>
+            <span class="price">₱2.00 / page</span>
+          </div>
+          <button type="button" id="btn-choose-research" class="btn btn-outline btn-block btn-sm">
+            Choose Service
+          </button>
+        </div>
+
+        <!-- Service 4: School Project Printing -->
+        <div class="service-card">
+          <div class="service-icon-wrapper" style="background:#f5f3ff; color:#7c3aed;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card-title">School Project Printing</h3>
+          <p class="service-card-desc">Print project portfolios, team handouts, visual aids, infographics, and group submission kits.</p>
+          <div class="service-price-tag">
+            <span class="label">Flexible</span>
+            <span class="price">₱5.00 / page</span>
+          </div>
+          <button type="button" id="btn-choose-project" class="btn btn-outline btn-block btn-sm">
+            Choose Service
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Pricing Section -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Transparent &amp; Predictable Rates</h2>
+        <p class="section-description">No hidden charges or surprise rush fees. Honest student pricing designed for academic budgets.</p>
+      </div>
+
+      <div class="pricing-wrapper">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service Category</th>
+              <th>Supported Paper Sizes</th>
+              <th>Features</th>
+              <th>Rate Per Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Black &amp; White Printing</strong></td>
+              <td>Short (8.5x11), Long (8.5x13), A4</td>
+              <td>Sharp monochrome text, 75 GSM premium bond</td>
+              <td><span class="pricing-badge standard">₱2.00 / page</span></td>
+            </tr>
+            <tr>
+              <td><strong>Colored Printing</strong></td>
+              <td>Short (8.5x11), Long (8.5x13), A4</td>
+              <td>Vibrant colors, fine graphic resolution, 80 GSM</td>
+              <td><span class="pricing-badge color">₱5.00 / page</span></td>
+            </tr>
+            <tr>
+              <td><strong>Double-Sided (Duplex)</strong></td>
+              <td>All Sizes (Short, Long, A4)</td>
+              <td>Eco-friendly, saves paper, neat alignment</td>
+              <td>Standard page rate applies</td>
+            </tr>
+            <tr>
+              <td><strong>Document Collation &amp; Stapling</strong></td>
+              <td>Standard bundles (up to 50 sheets)</td>
+              <td>Included complimentary with every order</td>
+              <td><span style="color:var(--color-success); font-weight:700;">FREE</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pricing-notes-box">
+          <div class="pricing-notes-text">
+            📌 <em>Paper size selection (Short, Long, A4) does not alter base printing rates during this academic semester. Sample project pricing.</em>
+          </div>
+          <a href="#calculator" class="btn btn-primary btn-sm">Test with Calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 & 6. Interactive Printing Calculator & Live Price Preview -->
+  <section id="calculator" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Feature</span>
+        <h2 class="section-title">PrintBai Printing Calculator</h2>
+        <p class="section-description">
+          Experience our <strong>PyScript Event-Driven Engine</strong>. As you adjust your document settings, Python functions immediately calculate costs and render real-time breakdowns.
+        </p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Left: Form Controls -->
+        <div class="calc-form-panel">
+          <div class="calc-panel-header">
+            <h3 class="calc-panel-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="16" y1="14" x2="16" y2="18"></line>
+                <path d="M16 10h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M8 10h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M8 14h.01"></path>
+                <path d="M12 18h.01"></path>
+                <path d="M8 18h.01"></path>
+              </svg>
+              Calculation Parameters
+            </h3>
+            <span style="font-size:0.8rem; color:var(--color-text-muted);">Python Event Handlers Active</span>
+          </div>
+
+          <div class="calc-form-grid">
+            <!-- Printing Type Radio Cards -->
+            <div class="form-group full-width">
+              <label class="form-label">Select Printing Type</label>
+              <div class="radio-cards-group">
+                <label id="card-type-bw" class="radio-card active">
+                  <input type="radio" name="calc-print-type" id="calc-type-bw" value="bw" checked>
+                  <span class="radio-card-title">
+                    Black &amp; White
+                    <span style="color:var(--color-primary-light);">●</span>
+                  </span>
+                  <span class="radio-card-rate">₱2.00 per page</span>
+                </label>
+
+                <label id="card-type-color" class="radio-card">
+                  <input type="radio" name="calc-print-type" id="calc-type-color" value="color">
+                  <span class="radio-card-title">
+                    Colored
+                    <span style="color:var(--color-accent);">●</span>
+                  </span>
+                  <span class="radio-card-rate">₱5.00 per page</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Number of Pages -->
+            <div class="form-group">
+              <label for="calc-pages" class="form-label">
+                Number of Pages
+                <small>(Unique pages in file)</small>
+              </label>
+              <input type="number" id="calc-pages" class="form-control" value="10" min="1" max="1000" placeholder="e.g. 10">
+            </div>
+
+            <!-- Number of Copies -->
+            <div class="form-group">
+              <label for="calc-copies" class="form-label">
+                Number of Copies
+                <small>(Sets needed)</small>
+              </label>
+              <input type="number" id="calc-copies" class="form-control" value="1" min="1" max="100" placeholder="e.g. 1">
+            </div>
+
+            <!-- Paper Size -->
+            <div class="form-group">
+              <label for="calc-paper-size" class="form-label">Paper Size</label>
+              <select id="calc-paper-size" class="form-control">
+                <option value="A4" selected>A4 (8.27 × 11.69 in)</option>
+                <option value="Short (Letter)">Short / Letter (8.5 × 11.0 in)</option>
+                <option value="Long (Legal)">Long / Legal (8.5 × 13.0 in)</option>
+              </select>
+            </div>
+
+            <!-- Double-sided Option -->
+            <div class="form-group">
+              <label class="form-label">Print Orientation</label>
+              <div class="checkbox-card">
+                <input type="checkbox" id="calc-double-sided">
+                <label for="calc-double-sided">Double-Sided Printing (Duplex)</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-action-bar">
+            <button type="button" id="btn-calculate" class="btn btn-primary btn-lg btn-block">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              Calculate Total
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Live Preview & Breakdown Panel -->
+        <div class="calc-result-box">
+          <div>
+            <!-- 6. Live Price Preview Banner -->
+            <div class="live-preview-banner">
+              <div class="live-preview-label">
+                <span>⚡ Live Reactive Preview</span>
+                <span class="py-badge">PyScript @when('input')</span>
+              </div>
+              <div id="live-preview-price" class="live-preview-amount">₱20.00</div>
+              <div style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.25rem;">
+                Updates in real-time as values change
+              </div>
+            </div>
+
+            <!-- Itemized Breakdown Box -->
+            <div class="breakdown-card">
+              <div class="breakdown-title">
+                <span>Itemized Cost Summary</span>
+                <span>PrintBai Estimator</span>
+              </div>
+              <div id="calc-breakdown-details">
+                <!-- Dynamically populated by PyScript on_calculate_click -->
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="#order" class="btn btn-accent btn-block">
+              Proceed with this Calculation &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 & 8. Order Form & PyScript Validation -->
+  <section id="order" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Order Submission</span>
+        <h2 class="section-title">Place Your Print Request</h2>
+        <p class="section-description">
+          Submit your order details below. Validated entirely in <strong>Python via PyScript</strong>. Error checks and receipt calculations run live on your machine.
+        </p>
+      </div>
+
+      <div class="order-wrapper">
+        <form id="order-form" novalidate>
+          <div class="order-form-grid">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="order-name" class="form-label">Full Name *</label>
+              <input type="text" id="order-name" class="form-control" placeholder="e.g. Juan Dela Cruz">
+              <div id="error-order-name" class="validation-error">Please enter your name.</div>
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group">
+              <label for="order-phone" class="form-label">Contact Number *</label>
+              <input type="tel" id="order-phone" class="form-control" placeholder="e.g. 0917 123 4567">
+              <div id="error-order-phone" class="validation-error">Please enter a valid contact number.</div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="order-email" class="form-label">Email Address *</label>
+              <input type="email" id="order-email" class="form-control" placeholder="e.g. juan@student.edu.ph">
+              <div id="error-order-email" class="validation-error">Please enter a valid email address.</div>
+            </div>
+
+            <!-- Printing Type -->
+            <div class="form-group">
+              <label for="order-type" class="form-label">Printing Type *</label>
+              <select id="order-type" class="form-control">
+                <option value="bw">Black &amp; White (₱2.00 / page)</option>
+                <option value="color">Colored (₱5.00 / page)</option>
+              </select>
+            </div>
+
+            <!-- Number of Pages -->
+            <div class="form-group">
+              <label for="order-pages" class="form-label">Number of Pages *</label>
+              <input type="number" id="order-pages" class="form-control" value="10" min="1" placeholder="e.g. 10">
+              <div id="error-order-pages" class="validation-error">Please enter a valid number of pages.</div>
+            </div>
+
+            <!-- Number of Copies -->
+            <div class="form-group">
+              <label for="order-copies" class="form-label">Number of Copies *</label>
+              <input type="number" id="order-copies" class="form-control" value="1" min="1" placeholder="e.g. 1">
+              <div id="error-order-copies" class="validation-error">Please enter at least 1 copy.</div>
+            </div>
+
+            <!-- Paper Size -->
+            <div class="form-group">
+              <label for="order-paper-size" class="form-label">Paper Size *</label>
+              <select id="order-paper-size" class="form-control">
+                <option value="A4" selected>A4</option>
+                <option value="Short (Letter)">Short (8.5 × 11.0 in)</option>
+                <option value="Long (Legal)">Long (8.5 × 13.0 in)</option>
+              </select>
+            </div>
+
+            <!-- Pickup or Delivery -->
+            <div class="form-group">
+              <label for="order-fulfillment" class="form-label">Pickup / Hand-off Method</label>
+              <select id="order-fulfillment" class="form-control">
+                <option value="pickup" selected>Campus Station Pickup (Beside Main Library)</option>
+                <option value="dorm">Student Dorm / Group Delivery</option>
+              </select>
+            </div>
+
+            <!-- Additional Instructions -->
+            <div class="form-group full-width">
+              <label for="order-instructions" class="form-label">
+                Additional Instructions
+                <small>(Optional: binding notes, specific page numbers, etc.)</small>
+              </label>
+              <textarea id="order-instructions" class="form-control" rows="3" placeholder="e.g. Please staple the upper-left corner of each set. Pages 1-5 only."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-order" class="btn btn-primary btn-lg btn-block">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            Submit Print Order
+          </button>
+        </form>
+
+        <!-- Dynamic Order Receipt Generated via PyScript -->
+        <div id="order-confirmation" class="order-confirmation-box">
+          <div class="order-confirmation-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <h4>Order Received Successfully!</h4>
+          </div>
+
+          <div id="order-receipt-content">
+            <!-- Rendered by Python handler -->
+          </div>
+
+          <div class="order-demo-disclaimer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            Order request recorded for demonstration. (School project prototype simulation)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Business Process Section -->
+  <section id="process" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Workflow</span>
+        <h2 class="section-title">How PrintBai Works</h2>
+        <p class="section-description">A streamlined 4-step printing cycle built around busy student schedules.</p>
+      </div>
+
+      <div class="process-grid">
+        <!-- Step 1 -->
+        <div class="process-card">
+          <div class="process-step-number">1</div>
+          <div class="process-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h3 class="process-card-title">Upload or Submit</h3>
+          <p class="process-card-desc">Customer provides their document file or completes our online order details.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-card">
+          <div class="process-step-number">2</div>
+          <div class="process-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="process-card-title">Choose Printing</h3>
+          <p class="process-card-desc">Select color, paper size, page count, and desired quantity on the calculator.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-card">
+          <div class="process-step-number">3</div>
+          <div class="process-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </div>
+          <h3 class="process-card-title">We Print</h3>
+          <p class="process-card-desc">PrintBai prepares the customer's documents cleanly using high-speed printers.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-card">
+          <div class="process-step-number">4</div>
+          <div class="process-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="process-card-title">Pick Up / Receive</h3>
+          <p class="process-card-desc">Customer receives the crisp finished documents at the campus station or hand-off point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Why Choose PrintBai -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Value Proposition</span>
+        <h2 class="section-title">Why Choose PrintBai</h2>
+        <p class="section-description">Created by students for students. Solving long printing lines and expensive off-campus rates.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg>
+          </div>
+          <h3 class="feature-title">Affordable</h3>
+          <p class="feature-desc">Student-friendly printing rates starting at only ₱2.00 per page to save your allowance.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          </div>
+          <h3 class="feature-title">Convenient</h3>
+          <p class="feature-desc">Easy online ordering and dynamic price estimation without queuing in the heat.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="feature-title">Fast</h3>
+          <p class="feature-desc">Engineered for urgent deadlines, assignment submissions, and last-minute school requirements.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="feature-title">Reliable</h3>
+          <p class="feature-desc">Accurate calculations, clear order summaries, and genuine care for your academic success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Campus Pickup Details -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="section-tag">Campus Hub</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 0.75rem;">Get in Touch With PrintBai</h2>
+          <p style="color:var(--color-text-muted);">Have large bulk requirements for department events or organization publications? Reach out directly.</p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Pickup Location</div>
+                <div class="contact-info-val">Campus Student Center, Ground Floor (Kiosk 04)</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Service Hours</div>
+                <div class="contact-info-val">Monday – Friday: 7:30 AM – 6:30 PM &bull; Saturday: 8:00 AM – 1:00 PM</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Inquiries &amp; File Submissions</div>
+                <div class="contact-info-val">support@printbai.school.project</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pickup-station-card">
+          <div>
+            <h3>Campus Quick-Pickup Station</h3>
+            <p>
+              Pre-order through our PyScript portal to skip the midday line before your next class. Your documents are queued, printed, and packaged ready for grab-and-go.
+            </p>
+            <div class="pickup-badge-list">
+              <span class="pickup-badge">⚡ 5-Minute Grab &amp; Go</span>
+              <span class="pickup-badge">💳 GCash / Maya / Cash</span>
+              <span class="pickup-badge">📂 Free Plastic Sleeve</span>
+            </div>
+          </div>
+          <div style="margin-top: 2rem;">
+            <a href="#order" class="btn btn-accent btn-block">Place a Demo Request Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon-box" style="box-shadow:none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+            </div>
+            Print<span style="color:#60a5fa;">Bai</span>
+          </div>
+          <p>
+            <strong>"Print It. Get It. Done."</strong><br>
+            Affordable and convenient school printing service project designed for college and senior high school students.
           </p>
         </div>
 
         <div>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Navigation</div>
-          <ul class="footer-links-list">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#calculator">Calculator</a></li>
@@ -731,27 +790,27 @@
         </div>
 
         <div>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">System</div>
-          <ul class="footer-links-list">
+          <h4 class="footer-col-title">Technologies</h4>
+          <ul class="footer-links">
             <li><a href="https://pyscript.net" target="_blank" rel="noopener">PyScript Core</a></li>
-            <li><a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide WebAssembly</a></li>
-            <li><a href="#">Python Event Handlers</a></li>
+            <li><a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide (Python WebAssembly)</a></li>
+            <li><a href="#">Event-Driven Architecture</a></li>
+            <li><a href="#">Pure Python Validation</a></li>
           </ul>
         </div>
 
         <div>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Coursework Note</div>
-          <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
-            Business + Event-Driven Programming school project. All dynamic interactivity is driven by Python event handlers.
+          <h4 class="footer-col-title">Project Defense Note</h4>
+          <p style="font-size:0.85rem; color:#94a3b8; line-height:1.6;">
+            Demonstrated for <strong>Business + Event-Driven Programming</strong> coursework. All dynamic calculations, live preview bindings, and order validation are executed via PyScript in the client browser.
           </p>
         </div>
       </div>
 
-      <div class="footer-meta-strip">
-        <div>PRINTBAI / 2026 &mdash; ACADEMIC PROJECT DEMONSTRATION</div>
-        <div>EVENT-DRIVEN PROGRAMMING SYSTEM // ALL RIGHTS RESERVED</div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PrintBai. Academic School Project Prototype.</div>
+        <div>Built with PyScript, Python, HTML5, and CSS3.</div>
       </div>
-
     </div>
   </footer>
 
