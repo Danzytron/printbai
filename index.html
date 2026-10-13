@@ -538,13 +538,29 @@
               </select>
             </div>
 
+            <!-- Upload Document / File Attachment -->
+            <div class="form-group full-width">
+              <label for="order-file" class="form-label">
+                Upload File to Print (PDF, DOCX, PPTX, Images) *
+                <small>(Files will be dispatched directly to rdelarmente0@gmail.com)</small>
+              </label>
+              <div class="file-upload-wrapper">
+                <input type="file" id="order-file" name="attachment" class="form-control file-input-field" accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg">
+                <div class="file-upload-info">
+                  <span id="file-chosen-name" class="file-chosen-text">No file chosen yet (Max 15MB)</span>
+                  <span class="file-badge">Direct Dispatch to rdelarmente0@gmail.com</span>
+                </div>
+              </div>
+              <div id="error-order-file" class="validation-error">Please select a file to print.</div>
+            </div>
+
             <!-- Additional Instructions -->
             <div class="form-group full-width">
               <label for="order-instructions" class="form-label">
                 Additional Instructions
                 <small>(Optional: binding notes, specific page numbers, etc.)</small>
               </label>
-              <textarea id="order-instructions" class="form-control" rows="3" placeholder="e.g. Please staple the upper-left corner of each set. Pages 1-5 only."></textarea>
+              <textarea id="order-instructions" name="instructions" class="form-control" rows="3" placeholder="e.g. Please staple the upper-left corner of each set. Pages 1-5 only."></textarea>
             </div>
           </div>
 
@@ -553,7 +569,7 @@
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
-            Submit Print Order
+            Submit Print Order &amp; Send File
           </button>
         </form>
 

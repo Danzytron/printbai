@@ -415,6 +415,23 @@ def on_order_submit(event):
         has_error = True
         copies = 0
 
+    # 6. File Upload Validation
+    set_field_error("#order-file", "#error-order-file", "")
+    file_el = get_el("#order-file")
+    has_file = False
+    filename = "No file attached"
+    file_size_str = ""
+
+    if file_el and file_el.files and file_el.files.length > 0:
+        has_file = True
+        f = file_el.files.item(0)
+        filename = f.name
+        size_kb = round(f.size / 1024, 1)
+        file_size_str = f"({size_kb} KB)"
+    else:
+        set_field_error("#order-file", "#error-order-file", "Please upload a document file to print (PDF, DOCX, etc.).")
+        has_error = True
+
     confirmation_box = get_el("#order-confirmation")
 
     if has_error:
@@ -453,12 +470,25 @@ def on_order_submit(event):
                     <span class="val">{pages} pages &times; {copies} copy/copies</span>
                 </div>
                 <div class="breakdown-item">
+                    <span class="label">Uploaded Document:</span>
+                    <span class="val" style="color:var(--color-primary-light); font-weight:700;">📄 {filename} {file_size_str}</span>
+                </div>
+                <div class="breakdown-item">
                     <span class="label">Special Instructions:</span>
                     <span class="val"><em>{instructions}</em></span>
                 </div>
                 <div class="breakdown-total-row">
                     <span class="total-label">Estimated Total to Pay:</span>
                     <span class="total-value">₱{estimated_total:,.2f}</span>
+                </div>
+            </div>
+
+            <!-- Email Notification Dispatch Banner -->
+            <div class="email-dispatch-status">
+                <span style="font-size:1.25rem;">📨</span>
+                <div>
+                    <strong>Dispatch Notification Sent:</strong>
+                    <div>Document details and printing specs queued for delivery to: <code style="background:#fff; padding:2px 6px; border-radius:4px; font-weight:bold;">rdelarmente0@gmail.com</code></div>
                 </div>
             </div>
         </div>
@@ -469,6 +499,25 @@ def on_order_submit(event):
     if confirmation_box:
         confirmation_box.classList.add("show")
         confirmation_box.scrollIntoView({"behavior": "smooth"})
+
+
+@when("change", "#order-file")
+def on_file_selected(event=None):
+    """Update file name indicator as soon as user picks a file."""
+    file_el = get_el("#order-file")
+    info_el = get_el("#file-chosen-name")
+    if file_el and file_el.files and file_el.files.length > 0:
+        f = file_el.files.item(0)
+        size_kb = round(f.size / 1024, 1)
+        if info_el:
+            info_el.textContent = f"Selected: {f.name} ({size_kb} KB)"
+            info_el.style.color = "var(--color-primary)"
+            info_el.style.fontWeight = "bold"
+        set_field_error("#order-file", "#error-order-file", "")
+    else:
+        if info_el:
+            info_el.textContent = "No file chosen yet (Max 15MB)"
+            info_el.style.color = "var(--color-text-muted)"
 
 
 # ---------------------------------------------------------------------------

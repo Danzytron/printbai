@@ -1034,6 +1034,65 @@ img, svg {
   gap: 0.5rem;
 }
 
+/* File Upload Custom Component */
+.file-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.file-upload-wrapper:hover {
+  border-color: var(--color-primary-light);
+  background: #eff6ff;
+}
+
+.file-input-field {
+  padding: 0.5rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.file-upload-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.file-chosen-text {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.file-badge {
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+}
+
+.email-dispatch-status {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #1e40af;
+}
+
 /* ==========================================================================
    Business Process Section
    ========================================================================== */
