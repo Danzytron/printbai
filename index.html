@@ -38,7 +38,7 @@
       </a>
 
       <nav>
-        <ul class="nav-menu">
+        <ul id="nav-menu" class="nav-menu">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#pricing" class="nav-link">Pricing</a></li>
@@ -51,6 +51,11 @@
 
       <div class="nav-actions">
         <a href="#calculator" class="btn btn-accent btn-sm">Print Now</a>
+        <button type="button" id="nav-toggle" class="nav-toggle-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -270,8 +275,9 @@
       </div>
 
       <div class="pricing-wrapper">
-        <table class="pricing-table">
-          <thead>
+        <div class="table-responsive">
+          <table class="pricing-table">
+            <thead>
             <tr>
               <th>Service Category</th>
               <th>Supported Paper Sizes</th>
@@ -306,6 +312,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
 
         <div class="pricing-notes-box">
           <div class="pricing-notes-text">

@@ -521,6 +521,31 @@ def on_file_selected(event=None):
 
 
 # ---------------------------------------------------------------------------
+# Mobile Navigation Menu Event Handler
+# ---------------------------------------------------------------------------
+@when("click", "#nav-toggle")
+def on_nav_toggle(event=None):
+    """Toggle mobile dropdown menu."""
+    menu_el = get_el("#nav-menu")
+    btn_el = get_el("#nav-toggle")
+    if menu_el:
+        menu_el.classList.toggle("open")
+    if btn_el:
+        btn_el.classList.toggle("active")
+
+
+@when("click", ".nav-link")
+def on_nav_link_click(event=None):
+    """Auto-close mobile menu when a nav link is clicked."""
+    menu_el = get_el("#nav-menu")
+    btn_el = get_el("#nav-toggle")
+    if menu_el and menu_el.classList.contains("open"):
+        menu_el.classList.remove("open")
+    if btn_el and btn_el.classList.contains("active"):
+        btn_el.classList.remove("active")
+
+
+# ---------------------------------------------------------------------------
 # Initial PyScript Startup Notification
 # ---------------------------------------------------------------------------
 def on_init():
