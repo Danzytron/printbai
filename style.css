@@ -1,61 +1,76 @@
 /* ==========================================================================
-   PrintBai — Modern, Clean, Professional Print Service Design System
-   Inspired by Vercel & modern SaaS: simple, sharp, structured, functional.
-   Palette: Clean white, neutral grays (#FAFAFA, #F4F4F5, #E4E4E7),
-   rich charcoal/black text (#09090B, #18181B, #71717A), crisp borders (#E4E4E7).
+   PrintBai — Professional Blue and Orange Printing Service Design System
+   Human-designed, trustworthy, modern, clean, and balanced.
+
+   Palette:
+   - Primary blue: #2563EB
+   - Deep blue: #1E3A8A
+   - Accent orange: #F97316
+   - Light orange: #FFF7ED
+   - White: #FFFFFF
+   - Main background: #F8FAFC
+   - Primary text: #111827
+   - Secondary text: #64748B
+   - Borders: #E2E8F0
+   - Success: #16A34A
+   - Error: #DC2626
    ========================================================================== */
 
 :root {
-  /* Neutral scale (Zinc / Neutral) */
-  --color-bg: #FFFFFF;
-  --color-bg-subtle: #FAFAFA;
-  --color-bg-muted: #F4F4F5;
-  --color-bg-dark: #09090B;
-  --color-bg-dark-surface: #121215;
+  /* Core Brand Colors */
+  --color-primary: #2563EB;          /* Primary Blue */
+  --color-primary-hover: #1D4ED8;
+  --color-primary-subtle: #EFF6FF;
+  --color-deep-blue: #1E3A8A;        /* Deep Blue for high contrast */
 
-  --color-border: #E4E4E7;
-  --color-border-subtle: #F4F4F5;
-  --color-border-dark: #27272A;
+  /* Orange Accents */
+  --color-accent-orange: #F97316;    /* Accent Orange */
+  --color-orange-hover: #EA580C;
+  --color-orange-subtle: #FFF7ED;    /* Light Orange */
+  --color-orange-border: #FED7AA;
 
-  --color-text: #09090B;
-  --color-text-secondary: #52525B;
-  --color-text-muted: #71717A;
-  --color-text-inverse: #FAFAFA;
-  --color-text-inverse-muted: #A1A1AA;
+  /* Surfaces & Backgrounds */
+  --color-white: #FFFFFF;
+  --color-bg-main: #F8FAFC;          /* Clean slate-tinted neutral background */
+  --color-bg-surface: #FFFFFF;
+  --color-bg-muted: #F1F5F9;
 
-  /* Functional Accents */
-  --color-accent: #09090B;          /* Primary actions in solid black */
-  --color-accent-hover: #27272A;
-  --color-accent-subtle: #F4F4F5;
-  --color-highlight: #18181B;
-  --color-blue-hint: #2563EB;
+  /* Typography */
+  --color-text-primary: #111827;     /* High contrast primary text */
+  --color-text-secondary: #64748B;   /* Muted secondary text */
+  --color-text-muted: #94A3B8;
+
+  /* Structural */
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+
+  /* Status */
   --color-success: #16A34A;
   --color-success-bg: #F0FDF4;
   --color-success-border: #BBF7D0;
-  --color-danger: #DC2626;
-  --color-danger-bg: #FEF2F2;
-  --color-danger-border: #FECACA;
+  --color-error: #DC2626;
+  --color-error-bg: #FEF2F2;
+  --color-error-border: #FECACA;
 
-  /* Restrained typography scale */
+  /* Typography & Layout */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Strict, professional geometry */
+  /* Geometry & Shadows */
   --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  /* Subtle, crisp shadows (avoid floaty AI blur) */
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xs: 0 1px 2px 0 rgba(17, 24, 39, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(17, 24, 39, 0.05), 0 1px 2px -1px rgba(17, 24, 39, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.05);
 
-  --transition: all 0.15s ease;
+  --transition: all 0.15s ease-in-out;
   --container-max: 1120px;
 }
 
 /* ==========================================================================
-   Reset & Base Styles
+   Base & Reset
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -71,8 +86,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
   line-height: 1.5;
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
@@ -81,7 +96,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.025em;
@@ -106,18 +121,18 @@ img, svg {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 4.75rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 
 .section-alt {
-  background-color: var(--color-bg-subtle);
+  background-color: var(--color-white);
 }
 
-/* Clear, structured section headers */
+/* Clear, balanced section headers */
 .section-header {
-  max-width: 680px;
-  margin-bottom: 3rem;
+  max-width: 660px;
+  margin-bottom: 2.75rem;
 }
 
 .section-header.centered {
@@ -134,19 +149,19 @@ img, svg {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-text-secondary);
-  background-color: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .section-title {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .section-description {
@@ -160,15 +175,15 @@ img, svg {
    PyScript Live Engine Bar
    ========================================================================== */
 .pyscript-indicator {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-inverse-muted);
+  background-color: var(--color-deep-blue);
+  color: #BFDBFE;
   font-size: 0.75rem;
   font-family: var(--font-mono);
   padding: 0.35rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-border-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pyscript-indicator .py-info-left {
@@ -180,7 +195,7 @@ img, svg {
 .py-status-dot {
   width: 7px;
   height: 7px;
-  background-color: #EAB308;
+  background-color: var(--color-accent-orange);
   border-radius: 50%;
   display: inline-block;
 }
@@ -193,23 +208,23 @@ img, svg {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
   font-weight: 500;
 }
 
 .py-engine-note {
-  color: var(--color-text-inverse-muted);
+  color: #93C5FD;
   font-size: 0.7rem;
 }
 
 /* ==========================================================================
-   Navigation Bar (Clean, Minimal, Sticky)
+   Navigation Bar (Sticky with Blue Brand & Orange Accent)
    ========================================================================== */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -218,23 +233,27 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 64px;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 1.15rem;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .brand-logo-img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+}
+
+.brand-text-accent {
+  color: var(--color-accent-orange);
 }
 
 .nav-menu {
@@ -248,12 +267,18 @@ img, svg {
   color: var(--color-text-secondary);
   font-weight: 500;
   font-size: 0.875rem;
-  padding: 0.4rem 0.2rem;
+  padding: 0.35rem 0.2rem;
   transition: var(--transition);
+  position: relative;
 }
 
 .nav-link:hover {
-  color: var(--color-text);
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .nav-actions {
@@ -267,12 +292,12 @@ img, svg {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  width: 34px;
-  height: 34px;
-  background: var(--color-bg);
+  width: 36px;
+  height: 36px;
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 6px;
+  padding: 7px;
   cursor: pointer;
 }
 
@@ -280,7 +305,7 @@ img, svg {
   display: block;
   width: 100%;
   height: 1.5px;
-  background: var(--color-text);
+  background: var(--color-deep-blue);
   transition: var(--transition);
 }
 
@@ -295,7 +320,7 @@ img, svg {
 }
 
 /* ==========================================================================
-   Buttons (Structured, Non-pill, High Usability)
+   Buttons (Consistent Blue Primary & Orange Accent System)
    ========================================================================== */
 .btn {
   display: inline-flex;
@@ -305,7 +330,7 @@ img, svg {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.875rem;
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 1.1rem;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
@@ -313,48 +338,56 @@ img, svg {
   white-space: nowrap;
 }
 
+/* Primary Button: Solid Blue */
 .btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverse);
-  border-color: var(--color-accent);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.12);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: var(--color-text-inverse);
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-white);
 }
 
+/* Secondary Button: White with Blue text and border */
 .btn-outline {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  border-color: var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: #BFDBFE;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-bg-muted);
-  border-color: #D4D4D8;
-  color: var(--color-text);
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
 }
 
+/* Accent Button: Solid Orange */
 .btn-accent {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-inverse);
+  background-color: var(--color-accent-orange);
+  color: var(--color-white);
+  border-color: var(--color-accent-orange);
+  box-shadow: 0 1px 2px rgba(249, 115, 22, 0.15);
 }
 
 .btn-accent:hover {
-  background-color: var(--color-accent-hover);
-  color: var(--color-text-inverse);
+  background-color: var(--color-orange-hover);
+  border-color: var(--color-orange-hover);
+  color: var(--color-white);
 }
 
 .btn-sm {
-  padding: 0.4rem 0.8rem;
+  padding: 0.4rem 0.85rem;
   font-size: 0.8125rem;
 }
 
 .btn-lg {
-  padding: 0.65rem 1.25rem;
+  padding: 0.65rem 1.35rem;
   font-size: 0.9375rem;
+  font-weight: 600;
 }
 
 .btn-block {
@@ -366,7 +399,7 @@ img, svg {
    ========================================================================== */
 .hero {
   padding: 4.5rem 0 5rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-main);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -386,26 +419,30 @@ img, svg {
   align-items: center;
   gap: 0.45rem;
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background-color: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  background-color: var(--color-orange-subtle);
+  border: 1px solid var(--color-orange-border);
   border-radius: var(--radius-sm);
   padding: 0.25rem 0.65rem;
   margin-bottom: 1.25rem;
 }
 
 .hero-tag svg {
-  color: var(--color-text);
+  color: var(--color-accent-orange);
 }
 
 .hero-title {
-  font-size: clamp(2.35rem, 4.2vw, 3.25rem);
+  font-size: clamp(2.25rem, 4.2vw, 3.25rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.035em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
   margin-bottom: 1.25rem;
+}
+
+.hero-title .text-orange {
+  color: var(--color-accent-orange);
 }
 
 .hero-description {
@@ -418,9 +455,9 @@ img, svg {
 .hero-cta-group {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .trust-indicators {
@@ -441,9 +478,9 @@ img, svg {
   width: 18px;
   height: 18px;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -458,14 +495,15 @@ img, svg {
   color: var(--color-text-secondary);
 }
 
-/* Hero Panel (Clean, Structured Rate Sheet) */
+/* Hero Panel (Clean Campus Rate Sheet) */
 .hero-visual {
   position: relative;
 }
 
 .hero-card {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
   border-radius: var(--radius-md);
   padding: 1.75rem;
   box-shadow: var(--shadow-sm);
@@ -486,15 +524,15 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .badge-student {
   font-size: 0.75rem;
-  font-weight: 500;
-  background: var(--color-bg-muted);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
+  font-weight: 600;
+  background: var(--color-orange-subtle);
+  color: var(--color-accent-orange);
+  border: 1px solid var(--color-orange-border);
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
 }
@@ -507,22 +545,22 @@ img, svg {
 }
 
 .price-pill {
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-main);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 1rem;
 }
 
 .price-pill.highlight {
-  background: #FFFFFF;
-  border-color: #A1A1AA;
+  background: var(--color-orange-subtle);
+  border-color: var(--color-orange-border);
 }
 
 .price-pill-label {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-weight: 600;
   margin-bottom: 0.35rem;
 }
@@ -531,8 +569,12 @@ img, svg {
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
   line-height: 1;
+}
+
+.price-pill.highlight .price-pill-value {
+  color: var(--color-accent-orange);
 }
 
 .hero-card-feature {
@@ -545,15 +587,16 @@ img, svg {
 }
 
 .hero-card-feature svg {
-  color: var(--color-text);
+  color: var(--color-primary);
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .hero-badge-floating {
   margin-top: 1rem;
-  background: var(--color-bg-muted);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent-orange);
   padding: 0.65rem 1rem;
   border-radius: var(--radius-sm);
   display: flex;
@@ -561,11 +604,12 @@ img, svg {
   gap: 0.5rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-xs);
 }
 
 /* ==========================================================================
-   Services Section (Clean Grid)
+   Services Section (Clean Blue/Orange Grid)
    ========================================================================== */
 .services-grid {
   display: grid;
@@ -574,7 +618,7 @@ img, svg {
 }
 
 .service-card {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
@@ -584,25 +628,33 @@ img, svg {
 }
 
 .service-card:hover {
-  border-color: #A1A1AA;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .service-icon-wrapper {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
 }
 
+.service-card:nth-child(2) .service-icon-wrapper {
+  background: var(--color-orange-subtle);
+  border-color: var(--color-orange-border);
+  color: var(--color-accent-orange);
+}
+
 .service-card-title {
   font-size: 1.05rem;
   font-weight: 600;
+  color: var(--color-deep-blue);
   margin-bottom: 0.45rem;
   letter-spacing: -0.015em;
 }
@@ -626,26 +678,28 @@ img, svg {
 
 .service-price-tag .label {
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 .service-price-tag .price {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 /* ==========================================================================
    Pricing Section (Tabular & Structured)
    ========================================================================== */
 .pricing-wrapper {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  box-shadow: var(--shadow-xs);
 }
 
 .table-responsive {
@@ -662,9 +716,9 @@ img, svg {
 }
 
 .pricing-table th {
-  background-color: var(--color-bg-subtle);
-  color: var(--color-text);
-  padding: 0.85rem 1.25rem;
+  background-color: var(--color-primary-subtle);
+  color: var(--color-deep-blue);
+  padding: 0.9rem 1.25rem;
   font-weight: 600;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -679,7 +733,7 @@ img, svg {
 }
 
 .pricing-table td strong {
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .pricing-table tbody tr:last-child td {
@@ -687,7 +741,7 @@ img, svg {
 }
 
 .pricing-table tbody tr:hover {
-  background-color: var(--color-bg-subtle);
+  background-color: #F8FAFC;
 }
 
 .pricing-badge {
@@ -697,13 +751,19 @@ img, svg {
   font-size: 0.8125rem;
   font-weight: 600;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
+  color: var(--color-primary);
+}
+
+.pricing-badge.badge-color {
+  background: var(--color-orange-subtle);
+  border-color: var(--color-orange-border);
+  color: var(--color-accent-orange);
 }
 
 .pricing-notes-box {
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-main);
   border-top: 1px solid var(--color-border);
   padding: 1rem 1.25rem;
   display: flex;
@@ -715,21 +775,21 @@ img, svg {
 
 .pricing-notes-text {
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 /* ==========================================================================
-   Calculator Section (Clean Two-Column Tool)
+   Calculator Section (Clean Blue & Orange Interactive Tool)
    ========================================================================== */
 .calc-container {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2rem;
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 2rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
 }
 
 .calc-panel-header {
@@ -744,7 +804,7 @@ img, svg {
 .calc-panel-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -769,15 +829,15 @@ img, svg {
 
 .form-label {
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text);
+  font-weight: 600;
+  color: var(--color-text-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .form-label small {
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-size: 0.75rem;
   font-weight: normal;
 }
@@ -789,15 +849,15 @@ img, svg {
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-size: 0.875rem;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
   transition: var(--transition);
 }
 
 .form-control:focus {
   outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 1px var(--color-accent);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
 /* Radio Selection Cards */
@@ -815,7 +875,7 @@ img, svg {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  background: var(--color-bg);
+  background: var(--color-white);
   transition: var(--transition);
 }
 
@@ -825,18 +885,18 @@ img, svg {
 }
 
 .radio-card:hover {
-  border-color: #A1A1AA;
+  border-color: var(--color-primary);
 }
 
 .radio-card.active, .radio-card:has(input:checked) {
-  border-color: var(--color-accent);
-  background: var(--color-bg-subtle);
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
 }
 
 .radio-card-title {
   font-weight: 600;
   font-size: 0.875rem;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
   margin-bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
@@ -849,20 +909,25 @@ img, svg {
   font-weight: 500;
 }
 
+.radio-card.active .radio-card-rate {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 /* Checkbox control */
 .checkbox-card {
   display: flex;
   align-items: center;
   gap: 0.65rem;
   padding: 0.65rem 0.85rem;
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-main);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
 .checkbox-card input[type="checkbox"] {
-  accent-color: var(--color-accent);
+  accent-color: var(--color-primary);
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -872,12 +937,12 @@ img, svg {
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-text-primary);
 }
 
 /* Calculator Result Panel */
 .calc-result-box {
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-main);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.75rem;
@@ -887,8 +952,9 @@ img, svg {
 }
 
 .live-preview-banner {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent-orange);
   border-radius: var(--radius-sm);
   padding: 1rem 1.25rem;
   margin-bottom: 1.25rem;
@@ -898,7 +964,7 @@ img, svg {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -909,12 +975,12 @@ img, svg {
   font-size: 1.85rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
   margin-top: 0.35rem;
 }
 
 .breakdown-card {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
@@ -926,7 +992,7 @@ img, svg {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: var(--color-deep-blue);
   margin-bottom: 0.85rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border);
@@ -952,8 +1018,8 @@ img, svg {
 }
 
 .breakdown-item .val {
-  font-weight: 500;
-  color: var(--color-text);
+  font-weight: 600;
+  color: var(--color-text-primary);
 }
 
 .breakdown-total-row {
@@ -968,26 +1034,27 @@ img, svg {
 .breakdown-total-row .total-label {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .breakdown-total-row .total-value {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--color-accent-orange);
 }
 
 /* ==========================================================================
    Order Form Section
    ========================================================================== */
 .order-wrapper {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 2.5rem;
   max-width: 820px;
   margin: 0 auto;
+  box-shadow: var(--shadow-sm);
 }
 
 .order-form-grid {
@@ -998,7 +1065,7 @@ img, svg {
 }
 
 .validation-error {
-  color: var(--color-danger);
+  color: var(--color-error);
   font-size: 0.775rem;
   margin-top: 0.3rem;
   display: none;
@@ -1010,8 +1077,8 @@ img, svg {
 }
 
 .form-control.is-invalid {
-  border-color: var(--color-danger);
-  background-color: var(--color-danger-bg);
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
 }
 
 /* Document Upload component */
@@ -1020,19 +1087,20 @@ img, svg {
   flex-direction: column;
   gap: 0.6rem;
   padding: 1.25rem;
-  background: var(--color-bg-subtle);
-  border: 1px dashed var(--color-border);
+  background: var(--color-bg-main);
+  border: 1px dashed #CBD5E1;
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
 
 .file-upload-wrapper:hover {
-  border-color: #A1A1AA;
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
 }
 
 .file-input-field {
   padding: 0.4rem;
-  background: var(--color-bg);
+  background: var(--color-white);
   cursor: pointer;
 }
 
@@ -1051,10 +1119,10 @@ img, svg {
 }
 
 .file-badge {
-  background: var(--color-bg-muted);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  font-weight: 500;
+  background: var(--color-orange-subtle);
+  color: var(--color-accent-orange);
+  border: 1px solid var(--color-orange-border);
+  font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
@@ -1083,22 +1151,22 @@ img, svg {
 }
 
 .order-confirmation-header h4 {
-  color: var(--color-text);
+  color: #14532D;
   font-size: 1.05rem;
   font-weight: 600;
 }
 
 .order-receipt-details {
-  background: var(--color-bg);
+  background: var(--color-white);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid #D1FAE5;
   margin-bottom: 0.85rem;
 }
 
 .order-demo-disclaimer {
   font-size: 0.8125rem;
-  color: var(--color-text-secondary);
+  color: #166534;
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -1107,23 +1175,25 @@ img, svg {
 .email-dispatch-status {
   margin-top: 0.85rem;
   padding: 0.75rem 1rem;
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
   font-size: 0.8125rem;
-  color: var(--color-text);
+  color: var(--color-deep-blue);
 }
 
 .email-dispatch-status code {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  border: 1px solid #BFDBFE;
   padding: 1px 5px;
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.775rem;
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1136,17 +1206,24 @@ img, svg {
 }
 
 .process-card {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  border-top: 3px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.process-card:hover {
+  border-top-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .process-step-number {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-accent-orange);
   margin-bottom: 0.85rem;
   letter-spacing: 0.05em;
 }
@@ -1155,10 +1232,10 @@ img, svg {
   width: 36px;
   height: 36px;
   margin-bottom: 1rem;
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
   border-radius: var(--radius-sm);
-  color: var(--color-text);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1167,6 +1244,7 @@ img, svg {
 .process-card-title {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--color-deep-blue);
   margin-bottom: 0.35rem;
 }
 
@@ -1186,19 +1264,25 @@ img, svg {
 }
 
 .feature-box {
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.feature-box:hover {
+  border-color: #BFDBFE;
+  box-shadow: var(--shadow-xs);
 }
 
 .feature-icon-box {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-orange-subtle);
+  border: 1px solid var(--color-orange-border);
+  color: var(--color-accent-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1208,6 +1292,7 @@ img, svg {
 .feature-title {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--color-deep-blue);
   margin-bottom: 0.35rem;
 }
 
@@ -1224,10 +1309,11 @@ img, svg {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2rem;
-  background: var(--color-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 2.25rem;
+  box-shadow: var(--shadow-xs);
 }
 
 .contact-info-list {
@@ -1246,9 +1332,9 @@ img, svg {
 .contact-info-icon {
   width: 36px;
   height: 36px;
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-primary-subtle);
+  border: 1px solid #BFDBFE;
+  color: var(--color-primary);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1260,36 +1346,37 @@ img, svg {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-weight: 600;
 }
 
 .contact-info-val {
   font-size: 0.9rem;
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font-weight: 500;
   margin-top: 0.15rem;
 }
 
 .pickup-station-card {
-  background: var(--color-bg-dark);
+  background: var(--color-deep-blue);
   border-radius: var(--radius-md);
   padding: 1.75rem;
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-top: 3px solid var(--color-accent-orange);
 }
 
 .pickup-station-card h3 {
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .pickup-station-card p {
-  color: var(--color-text-inverse-muted);
+  color: #DBEAFE;
   font-size: 0.875rem;
   line-height: 1.55;
   margin-bottom: 1.25rem;
@@ -1302,21 +1389,22 @@ img, svg {
 }
 
 .pickup-badge {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
-   Footer (Professional, Structured)
+   Footer (Professional Deep Blue with Orange Touch)
    ========================================================================== */
 .footer {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-inverse-muted);
+  background-color: var(--color-deep-blue);
+  color: #BFDBFE;
   padding: 4rem 0 2rem;
+  border-top: 3px solid var(--color-accent-orange);
 }
 
 .footer-grid {
@@ -1327,7 +1415,7 @@ img, svg {
 }
 
 .footer-brand .brand-logo {
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
   margin-bottom: 0.85rem;
 }
 
@@ -1335,16 +1423,18 @@ img, svg {
   width: 28px;
   height: 28px;
   border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  padding: 2px;
 }
 
 .footer-brand p {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: var(--color-text-inverse-muted);
+  color: #DBEAFE;
 }
 
 .footer-col-title {
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1360,22 +1450,22 @@ img, svg {
 }
 
 .footer-links a {
-  color: var(--color-text-inverse-muted);
+  color: #DBEAFE;
   font-size: 0.85rem;
 }
 
 .footer-links a:hover {
-  color: var(--color-text-inverse);
+  color: var(--color-accent-orange);
 }
 
 .footer-bottom {
   padding-top: 1.75rem;
-  border-top: 1px solid var(--color-border-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8125rem;
-  color: var(--color-text-inverse-muted);
+  color: #93C5FD;
 }
 
 /* ==========================================================================
@@ -1411,10 +1501,10 @@ img, svg {
 
   .nav-menu {
     position: absolute;
-    top: 60px;
+    top: 64px;
     left: 0;
     width: 100%;
-    background: var(--color-bg);
+    background: var(--color-white);
     border-bottom: 1px solid var(--color-border);
     flex-direction: column;
     padding: 1rem 1.5rem;

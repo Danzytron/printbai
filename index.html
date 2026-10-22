@@ -8,9 +8,9 @@
   <!-- Inter font family -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- PrintBai Clean Stylesheet -->
+  <!-- PrintBai Professional Blue and Orange Stylesheet -->
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
 
@@ -36,12 +36,12 @@
     <div class="container navbar-container">
       <a href="#home" class="brand-logo" aria-label="PrintBai Homepage">
         <img src="./assets/images/logo.png" alt="PrintBai" class="brand-logo-img">
-        <span>PrintBai</span>
+        <span>Print<span class="brand-text-accent">Bai</span></span>
       </a>
 
       <nav aria-label="Primary Navigation">
         <ul id="nav-menu" class="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#pricing" class="nav-link">Pricing</a></li>
           <li><a href="#calculator" class="nav-link">Calculator</a></li>
@@ -77,7 +77,7 @@
           </div>
 
           <h1 class="hero-title">
-            Fast, Affordable Printing Built for Students.
+            Fast, Affordable Printing Built for <span class="text-orange">Students.</span>
           </h1>
 
           <p class="hero-description">
@@ -88,7 +88,7 @@
             <a href="#calculator" class="btn btn-primary btn-lg">
               Calculate Cost
             </a>
-            <a href="#order" class="btn btn-outline btn-lg">
+            <a href="#order" class="btn btn-accent btn-lg">
               Place an Order
             </a>
           </div>
@@ -127,13 +127,13 @@
                 <div class="price-pill">
                   <div class="price-pill-label">Black &amp; White</div>
                   <div class="price-pill-value">₱2.00</div>
-                  <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">per page</div>
+                  <div style="font-size: 0.75rem; color: var(--color-text-secondary); margin-top: 0.25rem;">per page</div>
                 </div>
 
                 <div class="price-pill highlight">
                   <div class="price-pill-label">Full Color</div>
                   <div class="price-pill-value">₱5.00</div>
-                  <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">per page</div>
+                  <div style="font-size: 0.75rem; color: var(--color-accent-orange); margin-top: 0.25rem;">per page</div>
                 </div>
               </div>
 
@@ -199,7 +199,7 @@
             <p class="service-card-desc">High-quality color printing for presentations, capstone projects, charts, and diagrams.</p>
             <div class="service-price-tag">
               <span class="label">Rate</span>
-              <span class="price">₱5.00 / page</span>
+              <span class="price" style="color: var(--color-accent-orange);">₱5.00 / page</span>
             </div>
             <button type="button" id="btn-choose-color" class="btn btn-outline btn-block btn-sm">
               Choose Service
@@ -279,7 +279,7 @@
                   <td><strong>Colored Printing</strong></td>
                   <td>Short (8.5 × 11), Long (8.5 × 13), A4</td>
                   <td>High-resolution pigment color, 80 GSM paper</td>
-                  <td><span class="pricing-badge">₱5.00 / page</span></td>
+                  <td><span class="pricing-badge badge-color">₱5.00 / page</span></td>
                 </tr>
                 <tr>
                   <td><strong>Double-Sided (Duplex)</strong></td>
@@ -325,7 +325,7 @@
               <h3 class="calc-panel-title">
                 Order Parameters
               </h3>
-              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-family: var(--font-mono);">PyScript Handlers Active</span>
+              <span style="font-size: 0.75rem; color: var(--color-text-secondary); font-family: var(--font-mono);">PyScript Handlers Active</span>
             </div>
 
             <div class="calc-form-grid">
@@ -403,10 +403,10 @@
               <div class="live-preview-banner">
                 <div class="live-preview-label">
                   <span>Estimated Total</span>
-                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted);">Reactive</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-primary); font-weight: 600;">Reactive</span>
                 </div>
                 <div id="live-preview-price" class="live-preview-amount">₱20.00</div>
-                <div style="font-size: 0.775rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                <div style="font-size: 0.775rem; color: var(--color-text-secondary); margin-top: 0.25rem;">
                   Updates automatically on change
                 </div>
               </div>
@@ -678,7 +678,7 @@
         <div class="contact-grid">
           <div>
             <span class="section-tag">Campus Hub</span>
-            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Service &amp; Pickup Location</h2>
+            <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; color: var(--color-deep-blue);">Service &amp; Pickup Location</h2>
             <p style="color: var(--color-text-secondary); font-size: 0.9rem;">Have bulk requirements for student organizations or department publications? Reach out directly.</p>
 
             <div class="contact-info-list">
@@ -727,7 +727,7 @@
               </div>
             </div>
             <div style="margin-top: 1.5rem;">
-              <a href="#order" class="btn btn-outline btn-block" style="background: transparent; color: #FFF; border-color: rgba(255,255,255,0.25);">
+              <a href="#order" class="btn btn-accent btn-block">
                 Submit Document Order
               </a>
             </div>
@@ -742,9 +742,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="brand-logo" style="color: var(--color-text-inverse);">
+          <div class="brand-logo" style="color: #FFFFFF;">
             <img src="./assets/images/logo.png" alt="PrintBai" class="brand-logo-img footer-logo-img">
-            <span>PrintBai</span>
+            <span>Print<span style="color: var(--color-accent-orange);">Bai</span></span>
           </div>
           <p>
             Fast, affordable, student-friendly printing services for research papers, reports, assignments, and campus documents.
@@ -774,7 +774,7 @@
 
         <div>
           <h4 class="footer-col-title">Academic Context</h4>
-          <p style="font-size: 0.8125rem; color: var(--color-text-inverse-muted); line-height: 1.55;">
+          <p style="font-size: 0.8125rem; color: #DBEAFE; line-height: 1.55;">
             Business + Event-Driven Programming school project prototype. Interactive calculation and client-side form validation are executed entirely using Python in the browser.
           </p>
         </div>
