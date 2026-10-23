@@ -66,7 +66,7 @@
   --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.05);
 
   --transition: all 0.15s ease-in-out;
-  --container-max: 1120px;
+  --container-max: 1240px;
 }
 
 /* ==========================================================================
@@ -169,52 +169,6 @@ img, svg {
   color: var(--color-text-secondary);
   font-size: 0.975rem;
   line-height: 1.6;
-}
-
-/* ==========================================================================
-   PyScript Live Engine Bar
-   ========================================================================== */
-.pyscript-indicator {
-  background-color: var(--color-deep-blue);
-  color: #BFDBFE;
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  padding: 0.35rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.pyscript-indicator .py-info-left {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.py-status-dot {
-  width: 7px;
-  height: 7px;
-  background-color: var(--color-accent-orange);
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.py-status-dot.ready {
-  background-color: #22C55E;
-}
-
-.py-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #FFFFFF;
-  font-weight: 500;
-}
-
-.py-engine-note {
-  color: #93C5FD;
-  font-size: 0.7rem;
 }
 
 /* ==========================================================================
@@ -405,9 +359,16 @@ img, svg {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 480px) minmax(0, 1.35fr);
   align-items: center;
-  gap: 3.5rem;
+  gap: 3rem;
+}
+
+@media (min-width: 1200px) {
+  .hero-grid {
+    grid-template-columns: 460px 1fr;
+    gap: 3.5rem;
+  }
 }
 
 .hero-content {
@@ -495,11 +456,6 @@ img, svg {
   color: var(--color-text-secondary);
 }
 
-/* Hero Panel (Clean Campus Rate Sheet) */
-.hero-visual {
-  position: relative;
-}
-
 /* Hero Video Showcase (Right Column) */
 .hero-visual {
   position: relative;
@@ -507,52 +463,26 @@ img, svg {
 }
 
 .hero-video-card {
-  background: var(--color-white);
+  width: 100%;
+  background: #090D16;
   border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-primary);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.12), 0 8px 10px -6px rgba(30, 58, 138, 0.05);
   overflow: hidden;
   transition: var(--transition);
+  position: relative;
 }
 
 .hero-video-card:hover {
-  border-color: #BFDBFE;
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.08), 0 4px 6px -4px rgba(37, 99, 235, 0.04);
-}
-
-.hero-video-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.85rem 1.15rem;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.hero-video-title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-deep-blue);
-}
-
-.video-live-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-accent-orange);
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+  border-color: #93C5FD;
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.12);
 }
 
 .hero-video-wrapper {
   position: relative;
   width: 100%;
-  background: #000000;
   aspect-ratio: 16 / 9;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -564,41 +494,7 @@ img, svg {
   height: 100%;
   object-fit: contain;
   display: block;
-  background: #0F172A;
-}
-
-.hero-video-footer {
-  padding: 0.85rem 1.15rem;
-  background: var(--color-bg-main);
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.hero-video-caption {
-  font-size: 0.8125rem;
-  color: var(--color-text-secondary);
-}
-
-.hero-video-caption strong {
-  color: var(--color-deep-blue);
-}
-
-.video-cta-link {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: var(--transition);
-}
-
-.video-cta-link:hover {
-  color: var(--color-accent-orange);
+  background: #000000;
 }
 
 /* ==========================================================================
@@ -1532,12 +1428,6 @@ img, svg {
     padding: 1.5rem 1.25rem;
   }
 
-  .pyscript-indicator {
-    flex-direction: column;
-    gap: 0.25rem;
-    align-items: flex-start;
-    padding: 0.4rem 1rem;
-  }
 }
 
 @media (max-width: 540px) {

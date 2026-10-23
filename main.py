@@ -552,11 +552,6 @@ def on_init():
     """Run once when PyScript loads to initialize indicators and default state."""
     print("[PrintBai PyScript] Engine loaded and Event Listeners registered successfully.")
     
-    # Update PyScript header badge
-    dot = get_el("#py-status-dot")
-    badge_text = get_el("#py-status-text")
-    if dot: dot.classList.add("ready")
-    if badge_text: badge_text.textContent = "Python 3 Runtime Active & Event Handlers Bound"
 
     # Initial live price calculation
     on_calc_input(None)
